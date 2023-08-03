@@ -1,1 +1,2 @@
 from .bases.factories import SimpleBaseEventFactory
+from .hitting.setups.matheltics import MathelticsEventGeneratorFactory

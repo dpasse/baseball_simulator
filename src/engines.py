@@ -1,15 +1,14 @@
 from .poco import BatterStats
-from .events.hitting import AbstractEventGeneratorFactory, \
-                            EventGeneratorFactory
+from .events.hitting.generators.base import AbstractEventGenerator
 from .state import Inning
 
 
 class InningSimulator():
     def __init__(self, \
                  batter: BatterStats, \
-                 event_generator_factory: AbstractEventGeneratorFactory = EventGeneratorFactory()):
+                 event_generator: AbstractEventGenerator):
         self._batter = batter
-        self._event_generator = event_generator_factory.create(self._batter.likelihoods())
+        self._event_generator = event_generator
 
     def play(self):
         inning = Inning()

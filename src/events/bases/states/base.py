@@ -1,7 +1,7 @@
 from typing import List, Set
 from abc import ABC, abstractproperty, abstractmethod
 
-from ...poco import EventCodes
+from ....poco import EventCodes
 
 
 class AbstractBaseEvent(ABC):

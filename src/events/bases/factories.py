@@ -1,33 +1,6 @@
-from .base import AbstractBaseEvent
-from .empty import Empty
-from .take_base import TakeBase
-from .singles import SingleBase, MediumSingle, LongSingle
-from .doubles import Double, LongDouble
-from .triple import Triple
-from .homerun import Homerun
-from .grounders import GroundBall, GroundIntoDoublePlay
-from .fly_ball import MediumFlyBall, LongFlyBall
-
+from .states import SUPPORTED_BASE_TYPES, AbstractBaseEvent, Empty
 from ...poco import EventCodes
 
-
-SUPPORTED_BASE_TYPES = [
-    ## positive
-    TakeBase,
-    SingleBase,
-    MediumSingle,
-    LongSingle,
-    Double,
-    LongDouble,
-    Triple,
-    Homerun,
-
-    ## negative
-    GroundBall,
-    GroundIntoDoublePlay,
-    MediumFlyBall,
-    LongFlyBall
-]
 
 class SimpleBaseEventFactory:
     def __init__(self):
