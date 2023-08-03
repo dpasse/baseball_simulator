@@ -15,7 +15,7 @@ def run_simulation(batter: BatterStats, iterations=50000):
     )
 
     runs = 0
-    for i in range(iterations):
+    for _ in range(iterations):
         inning = inning_simulator.play()
         runs += inning.history[-1].scenario.runs
 
