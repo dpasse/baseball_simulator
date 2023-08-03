@@ -8,7 +8,6 @@
 from src.poco import BatterStats
 from src.engines import InningSimulator
 
-avg_innings_per_game = (26.72 / 3)
 def run_simulation(batter: BatterStats, iterations=50000):
     inning_simulator = InningSimulator(
         batter,
