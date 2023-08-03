@@ -1,13 +1,13 @@
-from ..generators.base import AbstractEventGenerator
-from ..generators.simple import SimpleEventGenerator
-from ..trees.composite import EventVariableComposite
-from ..trees.tree import EventVariableTree
-from ..trees.visitors.probabilities import GetProbabilityRanges
-from ..trees.factories import AbstractEventTreeFactory
-from ....poco import EventCodes
+from ..events.hitting.generators.base import AbstractEventGenerator
+from ..events.hitting.generators.simple import SimpleEventGenerator
+from ..events.hitting.trees.composite import EventVariableComposite
+from ..events.hitting.trees.tree import EventVariableTree
+from ..events.hitting.trees.visitors.probabilities import GetProbabilityRanges
+from ..events.hitting.trees.factories import AbstractEventTreeFactory
+from ..poco import EventCodes, BatterStats
 
 
-class MathelticsEventTreeFactory(AbstractEventTreeFactory):
+class MathleticsEventTreeFactory(AbstractEventTreeFactory):
     def create(self, likelihoods) -> EventVariableTree:
         tree = EventVariableTree(
             members=[
@@ -110,14 +110,14 @@ class MathelticsEventTreeFactory(AbstractEventTreeFactory):
 
         return tree
 
-class MathelticsEventGeneratorFactory():
+class MathleticsSimpleEventGenerator():
     def __init__(self):
-        self._event_tree_factory = MathelticsEventTreeFactory()
+        self._event_tree_factory = MathleticsEventTreeFactory()
 
-    def create(self, likelihoods: dict) -> AbstractEventGenerator:
+    def create(self, batter: BatterStats) -> AbstractEventGenerator:
         probability_ranges = GetProbabilityRanges()
-        MathelticsEventTreeFactory() \
-            .create(likelihoods) \
+        MathleticsEventTreeFactory() \
+            .create(batter.likelihoods()) \
             .accept(probability_ranges)
 
         return SimpleEventGenerator(probability_ranges.ranges)
