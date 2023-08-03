@@ -1,6 +1,6 @@
 from typing import List, Optional
 
-from .events.bases import SimpleBaseEventFactory
+from .events import SimpleBaseEventFactory
 from .poco import EventCodes, InningContext, InningHistory
 
 
