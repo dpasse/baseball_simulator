@@ -1,6 +1,7 @@
 # Baseball Simulator
 
-> built using simulation parameters from [Mathletics](https://www.amazon.com/Mathletics-Gamblers-Enthusiasts-Mathematics-Basketball/dp/0691154589/ref=sr_1_1?crid=Y0XZXKV75A5Y&keywords=matheletics&qid=1691059094&sprefix=mathletics%2Caps%2C125&sr=8-1)
+> built using simulation parameters from [Mathletics](https://www.amazon.com/Mathletics-Gamblers-Enthusiasts-Mathematics-Basketball/dp/0691154589/ref=sr_1_1?crid=Y0XZXKV75A5Y&keywords=matheletics&qid=1691059094&sprefix=mathletics%2Caps%2C125&sr=8-1) <br />
+> see [Mathletics Event Probabilities](https://github.com/dpasse/baseball_simulator/blob/main/src/setups/mathletics.py) for the complete tree of event probabilities
 
 ## How many runs would a team of Ichiro's from 2004 create?
 
