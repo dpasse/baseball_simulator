@@ -7,7 +7,6 @@ from ..events import SimpleBaseEventFactory
 class Bases():
     def __init__(self, scenario: Optional[List[int]] = None) -> None:
         self._bases = (scenario if scenario else [0, 0, 0]).copy()
-        
         self._base_event_factory = SimpleBaseEventFactory()
 
     @property

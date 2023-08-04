@@ -6,17 +6,11 @@ from ..models import EventCodes, InningContext, InningHistory
 
 
 class Inning():
-    def __init__(self, scenario: Optional[InningContext] = None) -> None:
-        self._bases = Bases(scenario.bases if scenario else [0, 0, 0])
-        self._runs: int = scenario.runs if scenario else 0
-        self._outs: int = scenario.outs if scenario else 0
-
+    def __init__(self, state: Optional[InningContext] = None) -> None:
+        self._bases = Bases(state.bases if state else [0, 0, 0])
+        self._runs: int = state.runs if state else 0
+        self._outs: int = state.outs if state else 0
         self._outs_calculator = OutsCalculator()
-        self._history: List[InningHistory] = []
-
-    @property
-    def history(self) -> List[InningHistory]:
-        return self._history
 
     def is_over(self) -> bool:
         return self._outs >= 3
@@ -29,13 +23,7 @@ class Inning():
             self._runs
         )
 
-    def execute(self, key: str, event_code: EventCodes) -> None:
+    def execute(self, event_code: EventCodes) -> None:
         self._outs += self._outs_calculator.calculate(event_code)
         if not self.is_over():
             self._runs += self._bases.play_event(event_code)
-            self._history.append(InningHistory(
-                self.current_state,
-                key,
-                event_code,
-                event_code.name
-            ))
