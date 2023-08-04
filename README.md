@@ -7,7 +7,7 @@
 
 ```python
 from src import InningSimulator, \
-                BasicInningSimulatorEngine, \
+                MonteCarloInningEngine, \
                 BatterStats
 
 from src.setups import MathleticsSimpleEventGenerator
@@ -31,7 +31,7 @@ simulator = InningSimulator(
     MathleticsSimpleEventGenerator().create(batter)
 )
 
-ichiro_runs = BasicInningSimulatorEngine(simulator).run()
+ichiro_runs = MonteCarloInningEngine(simulator).run()
 
 print(ichiro_runs * avg_innings_per_game, 'runs per game')
 ```

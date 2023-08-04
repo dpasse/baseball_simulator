@@ -1,6 +1,6 @@
 from ..simulators import InningSimulator
 
-class BasicInningSimulatorEngine:
+class MonteCarloInningEngine:
     def __init__(self, simulator: InningSimulator):
         self._simulator = simulator
 
