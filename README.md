@@ -6,27 +6,12 @@
 ## How many runs would a team of Ichiro's from 2004 create?
 
 ```python
-from src.poco import BatterStats
-from src.engines import InningSimulator
-
-def run_simulation(batter: BatterStats, iterations=50000):
-    inning_simulator = InningSimulator(
-        batter,
-        MathleticsSimpleEventGenerator().create(batter)
-    )
-
-    runs = 0
-    for _ in range(iterations):
-        inning = inning_simulator.play()
-        runs += inning.history[-1].scenario.runs
-
-    return runs / iterations
-
-```
-
-```python
+from src import InningSimulator, \
+                BasicInningSimulatorEngine, \
+                BatterStats
 
 from src.setups import MathleticsSimpleEventGenerator
+
 
 player = BatterStats.create('ichiro', {
     'AB': 704, ## Appearance
@@ -41,7 +26,12 @@ player = BatterStats.create('ichiro', {
     'HR': 8
 })
 
-ichiro_runs = run_simulation(player)
+simulator = InningSimulator(
+    batter,
+    MathleticsSimpleEventGenerator().create(batter)
+)
+
+ichiro_runs = BasicInningSimulatorEngine(simulator).run()
 
 print(ichiro_runs * avg_innings_per_game, 'runs per game')
 ```

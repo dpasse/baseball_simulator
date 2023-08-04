@@ -10,7 +10,7 @@ class EmptyValidator(AbstractEventValidator):
 
     @property
     def codes(self) -> Set[EventCodes]:
-        return set([self._code])
+        return { self._code }
     
     def action(self, _: InningContext) -> EventCodes:
         return self._code

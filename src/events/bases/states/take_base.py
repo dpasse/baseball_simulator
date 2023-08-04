@@ -7,7 +7,10 @@ from ....poco import EventCodes
 class TakeBase(AbstractBaseEvent):
     @property
     def codes(self) -> Set[EventCodes]:
-        return set([EventCodes.Walk, EventCodes.HBP])
+        return { 
+            EventCodes.Walk, \
+            EventCodes.HBP
+        }
 
     def action(self, bases: List[int]) -> List[int]:
         if bases == [1, 1, 1]:

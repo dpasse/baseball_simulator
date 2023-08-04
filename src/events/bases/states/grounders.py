@@ -7,7 +7,7 @@ from ....poco import EventCodes
 class GroundBall(AbstractBaseEvent):
     @property
     def codes(self) -> Set[EventCodes]:
-        return set([EventCodes.NormalGroundBall])
+        return { EventCodes.NormalGroundBall }
 
     def action(self, bases: List[int]) -> List[int]:
         if bases == [0, 1, 1]:
@@ -18,7 +18,7 @@ class GroundBall(AbstractBaseEvent):
 class GroundIntoDoublePlay(AbstractBaseEvent):
     @property
     def codes(self) -> Set[EventCodes]:
-        return set([EventCodes.GIDP])
+        return { EventCodes.GIDP }
 
     def action(self, bases: List[int]) -> List[int]:
         if bases == [1, 0, 0]:

@@ -1,6 +1,6 @@
-from .poco import BatterStats
-from .events.hitting.generators.base import AbstractEventGenerator
-from .state import Inning
+from ..poco import BatterStats, InningHistory
+from ..events.hitting.generators import AbstractEventGenerator
+from ..state import Inning
 
 
 class InningSimulator():

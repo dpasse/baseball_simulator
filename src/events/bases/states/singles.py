@@ -7,7 +7,10 @@ from ....poco import EventCodes
 class SingleBase(AbstractBaseEvent):
     @property
     def codes(self) -> Set[EventCodes]:
-        return set([EventCodes.Error, EventCodes.ShortSingle])
+        return { 
+            EventCodes.Error, \
+            EventCodes.ShortSingle
+        }
 
     def action(self, bases: List[int]) -> List[int]:
         return [1] + bases
@@ -15,7 +18,7 @@ class SingleBase(AbstractBaseEvent):
 class MediumSingle(SingleBase):
     @property
     def codes(self) -> Set[EventCodes]:
-        return set([EventCodes.MediumSingle])
+        return { EventCodes.MediumSingle }
 
     def action(self, bases: List[int]) -> List[int]:
         return super().action(bases[:1] + [0] + bases[1:])
@@ -23,7 +26,7 @@ class MediumSingle(SingleBase):
 class LongSingle(SingleBase):
     @property
     def codes(self) -> Set[EventCodes]:
-        return set([EventCodes.LongSingle])
+        return { EventCodes.LongSingle }
 
     def action(self, bases: List[int]) -> List[int]:
         return super().action([0] + bases)

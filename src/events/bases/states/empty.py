@@ -7,7 +7,7 @@ from ....poco import EventCodes
 class Empty(AbstractBaseEvent):
     @property
     def codes(self) -> Set[EventCodes]:
-        return set([])
+        return { }
 
     def action(self, bases: List[int]) -> List[int]:
         return bases

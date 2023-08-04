@@ -7,7 +7,7 @@ from ....poco import EventCodes
 class MediumFlyBall(AbstractBaseEvent):
     @property
     def codes(self) -> Set[EventCodes]:
-        return set([EventCodes.MediumFly])
+        return { EventCodes.MediumFly }
 
     def action(self, bases: List[int]) -> List[int]:
         return bases[:2] + [0] + bases[2:]
@@ -15,7 +15,7 @@ class MediumFlyBall(AbstractBaseEvent):
 class LongFlyBall(AbstractBaseEvent):
     @property
     def codes(self) -> Set[EventCodes]:
-        return set([EventCodes.MediumFly])
+        return { EventCodes.MediumFly }
 
     def action(self, bases: List[int]) -> List[int]:
         return  bases[:1] + [0] + bases[1:]

@@ -2,7 +2,7 @@ from .base import AbstractBaseEvent
 from .empty import Empty
 from .take_base import TakeBase
 from .singles import SingleBase, MediumSingle, LongSingle
-from .doubles import Double, LongDouble
+from .doubles import ShortDouble, LongDouble
 from .triple import Triple
 from .homerun import Homerun
 from .grounders import GroundBall, GroundIntoDoublePlay
@@ -15,7 +15,7 @@ SUPPORTED_BASE_TYPES = [
     SingleBase,
     MediumSingle,
     LongSingle,
-    Double,
+    ShortDouble,
     LongDouble,
     Triple,
     Homerun,
