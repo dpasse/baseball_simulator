@@ -2,16 +2,16 @@ from ..events.hitting.generators import AbstractEventGenerator, SimpleEventGener
 from ..events.hitting import EventVariableComposite, EventVariableTree
 from ..events.hitting.trees.visitors.probabilities import GetProbabilityRanges
 from ..events.hitting.trees.factories import AbstractEventTreeFactory
-from ..models import EventCodes, BatterStats
+from ..models import EventCodes, BatterStats, BatterLikelihoodData
 
 
 class MathleticsEventTreeFactory(AbstractEventTreeFactory):
-    def create(self, likelihoods) -> EventVariableTree:
+    def create(self, likelihoods: BatterLikelihoodData) -> EventVariableTree:
         tree = EventVariableTree(
             members=[
                 EventVariableComposite(
                     event_code=EventCodes.Error,
-                    probability=likelihoods['E'],
+                    probability=likelihoods.E,
                 ),
                 EventVariableTree(
                     members=[
@@ -50,19 +50,19 @@ class MathleticsEventTreeFactory(AbstractEventTreeFactory):
                             probability=.309,
                         ),
                     ],
-                    probability=likelihoods['Outs'],
+                    probability=likelihoods.Outs,
                 ),
                 EventVariableComposite(
                     event_code=EventCodes.Strikeout,
-                    probability=likelihoods['K'],
+                    probability=likelihoods.K,
                 ),
                 EventVariableComposite(
                     event_code=EventCodes.Walk,
-                    probability=likelihoods['BB'],
+                    probability=likelihoods.BB,
                 ),
                 EventVariableComposite(
                     event_code=EventCodes.HBP,
-                    probability=likelihoods['HBP'],
+                    probability=likelihoods.HBP,
                 ),
                 EventVariableTree(
                     members=[
@@ -79,7 +79,7 @@ class MathleticsEventTreeFactory(AbstractEventTreeFactory):
                             probability=.2,
                         )
                     ],
-                    probability=likelihoods['1B'],
+                    probability=likelihoods.Singles,
                 ),
                 EventVariableTree(
                     members=[
@@ -92,15 +92,15 @@ class MathleticsEventTreeFactory(AbstractEventTreeFactory):
                             probability=.2,
                         ),
                     ],
-                    probability=likelihoods['2B'],
+                    probability=likelihoods.Doubles,
                 ),
                 EventVariableComposite(
                     event_code=EventCodes.Triple,
-                    probability=likelihoods['3B'],
+                    probability=likelihoods.Triples,
                 ),
                 EventVariableComposite(
                     event_code=EventCodes.HR,
-                    probability=likelihoods['HR'],
+                    probability=likelihoods.HR,
                 )
             ],
             probability=1.0
@@ -115,7 +115,7 @@ class MathleticsSimpleEventGenerator():
     def create(self, batter: BatterStats) -> AbstractEventGenerator:
         probability_ranges = GetProbabilityRanges()
         MathleticsEventTreeFactory() \
-            .create(batter.likelihoods()) \
+            .create(batter.likelihoods) \
             .accept(probability_ranges)
 
         return SimpleEventGenerator(probability_ranges.ranges)
