@@ -1,7 +1,5 @@
-from ..events.hitting.generators.base import AbstractEventGenerator
-from ..events.hitting.generators.simple import SimpleEventGenerator
-from ..events.hitting.trees.composite import EventVariableComposite
-from ..events.hitting.trees.tree import EventVariableTree
+from ..events.hitting.generators import AbstractEventGenerator, SimpleEventGenerator
+from ..events.hitting import EventVariableComposite, EventVariableTree
 from ..events.hitting.trees.visitors.probabilities import GetProbabilityRanges
 from ..events.hitting.trees.factories import AbstractEventTreeFactory
 from ..models import EventCodes, BatterStats
