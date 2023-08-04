@@ -6,11 +6,11 @@
 ## How many runs would a team of Ichiro's from 2004 create?
 
 ```python
-from src import InningSimulator, \
-                MonteCarloInningEngine, \
-                BatterStats
+from bball import InningSimulator, \
+                  MonteCarloInningEngine, \
+                  BatterStats
 
-from src.setups import MathleticsSimpleEventGenerator
+from bball.setups import MathleticsSimpleEventGenerator
 
 
 player = BatterStats.create('ichiro', {
