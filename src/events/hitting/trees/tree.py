@@ -2,7 +2,7 @@ from typing import List
 from collections import Iterable
 from .composite import EventVariableComposite
 from .visitors.base import AbstractVisitor
-from ....poco import EventCodes
+from ....models import EventCodes
 
 
 class EventVariableTree(Iterable, EventVariableComposite):

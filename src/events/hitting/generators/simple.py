@@ -5,7 +5,7 @@ import random
 
 from .base import AbstractEventGenerator
 from ..validations.factories import SimpleEventValidatorFactory
-from ....poco import EventCodes, InningContext
+from ....models import EventCodes, InningContext
 
 
 class SimpleEventGenerator(AbstractEventGenerator):

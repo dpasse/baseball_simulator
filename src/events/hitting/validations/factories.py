@@ -2,7 +2,7 @@ from .base import AbstractEventValidator
 from .empty import EmptyValidator
 from .double_play import DoublePlayValidator
 
-from ....poco import EventCodes
+from ....models import EventCodes
 
 SUPPORTED_BASE_VALIDATOR_TYPES = [
     DoublePlayValidator,

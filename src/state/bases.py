@@ -1,6 +1,6 @@
 from typing import List, Optional
 
-from ..poco import EventCodes
+from ..models import EventCodes
 from ..events import SimpleBaseEventFactory
 
 

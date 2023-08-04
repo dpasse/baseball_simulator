@@ -1,5 +1,5 @@
 from .states import SUPPORTED_BASE_TYPES, AbstractBaseEvent, Empty
-from ...poco import EventCodes
+from ...models import EventCodes
 
 
 class SimpleBaseEventFactory:

@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from .tree import EventVariableTree, EventVariableComposite
-from ....poco import EventCodes
+from ....models import EventCodes
 
 
 class AbstractEventTreeFactory(ABC):

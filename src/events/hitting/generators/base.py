@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from ....poco import EventCodes, InningContext
+from ....models import EventCodes, InningContext
 
 
 class AbstractEventGenerator(ABC):

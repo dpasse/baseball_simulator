@@ -1,7 +1,7 @@
 from typing import Set, List
 
 from .empty import EmptyValidator
-from ....poco import EventCodes, InningContext
+from ....models import EventCodes, InningContext
 
 
 class DoublePlayValidator(EmptyValidator):

@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod, abstractproperty
 from typing import Set, List
-from ....poco import EventCodes, InningContext
+from ....models import EventCodes, InningContext
 
 
 class AbstractEventValidator:

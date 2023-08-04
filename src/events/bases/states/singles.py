@@ -1,7 +1,7 @@
 from typing import List, Set
 from .base import AbstractBaseEvent
 
-from ....poco import EventCodes
+from ....models import EventCodes
 
 
 class SingleBase(AbstractBaseEvent):

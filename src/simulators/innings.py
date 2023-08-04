@@ -1,4 +1,4 @@
-from ..poco import BatterStats, InningHistory
+from ..models import BatterStats, InningHistory
 from ..events.hitting.generators import AbstractEventGenerator
 from ..state import Inning
 

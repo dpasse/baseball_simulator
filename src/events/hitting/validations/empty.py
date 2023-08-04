@@ -1,7 +1,7 @@
 from typing import Set
 
 from .base import AbstractEventValidator
-from ....poco import EventCodes, InningContext
+from ....models import EventCodes, InningContext
 
 
 class EmptyValidator(AbstractEventValidator):

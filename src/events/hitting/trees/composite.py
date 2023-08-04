@@ -1,4 +1,4 @@
-from ....poco import EventCodes
+from ....models import EventCodes
 from .visitors.base import AbstractVisitor
 
 

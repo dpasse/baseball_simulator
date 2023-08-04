@@ -2,7 +2,7 @@ from typing import List, Optional
 
 from .bases import Bases
 from .calculators.outs import OutsCalculator
-from ..poco import EventCodes, InningContext, InningHistory
+from ..models import EventCodes, InningContext, InningHistory
 
 
 class Inning():

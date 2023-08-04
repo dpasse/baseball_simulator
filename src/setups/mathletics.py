@@ -4,7 +4,7 @@ from ..events.hitting.trees.composite import EventVariableComposite
 from ..events.hitting.trees.tree import EventVariableTree
 from ..events.hitting.trees.visitors.probabilities import GetProbabilityRanges
 from ..events.hitting.trees.factories import AbstractEventTreeFactory
-from ..poco import EventCodes, BatterStats
+from ..models import EventCodes, BatterStats
 
 
 class MathleticsEventTreeFactory(AbstractEventTreeFactory):
