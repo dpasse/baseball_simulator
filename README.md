@@ -27,7 +27,6 @@ player = BatterStats.create('ichiro', {
 })
 
 simulator = InningSimulator(
-    batter,
     MathleticsSimpleEventGenerator().create(batter)
 )
 
