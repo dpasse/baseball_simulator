@@ -1,4 +1,4 @@
-from typing import Set, List
+from typing import List
 
 from .empty import EmptyValidator
 from ....models import EventCodes, InningContext

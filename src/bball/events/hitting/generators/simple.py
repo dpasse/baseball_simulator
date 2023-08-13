@@ -1,4 +1,4 @@
-from typing import List, Tuple, Optional
+from typing import List, Tuple, Optional, cast
 
 import random
 
@@ -24,4 +24,6 @@ class SimpleEventGenerator(AbstractEventGenerator):
         if next_event_code == None:
             raise ValueError('No Event Code was generated!')
 
-        return self._event_validator_Factory.create(next_event_code).action(inning_state)
+        return self._event_validator_Factory \
+            .create(cast(EventCodes, next_event_code)) \
+            .action(inning_state)

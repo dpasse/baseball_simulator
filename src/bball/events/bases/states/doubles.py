@@ -15,7 +15,7 @@ class ShortDouble(AbstractBaseEvent):
 class LongDouble(ShortDouble):
     @property
     def codes(self) -> Set[EventCodes]:
-        return set([EventCodes.LongDouble])
+        return { EventCodes.LongDouble }
 
     def action(self, bases: List[int]) -> List[int]:
         return super().action([0] + bases)

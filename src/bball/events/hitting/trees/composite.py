@@ -22,7 +22,7 @@ class EventVariableComposite():
         return self._event_code
     
     @property
-    def probability(self) -> bool:
+    def probability(self) -> float:
         if self.parent:
             return self.parent.probability * self._probability
 

@@ -7,10 +7,7 @@ from ..models import EventCodes, InningContext
 
 class Inning():
     def __init__(self) -> None:
-        self._bases = Bases([0, 0, 0])
-        self._runs: int = 0
-        self._outs: int = 0
-
+        self.set_state(InningContext(0, [0, 0, 0], 0))
         self._outs_calculator = OutsCalculator()
 
     @property
@@ -31,6 +28,6 @@ class Inning():
 
     def set_state(self, state: InningContext) -> None:
         self._bases = Bases(state.bases)
-        self._runs: int = state.runs
-        self._outs: int = state.outs
+        self._runs = state.runs
+        self._outs = state.outs
     

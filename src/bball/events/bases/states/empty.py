@@ -7,7 +7,7 @@ from ....models import EventCodes
 class Empty(AbstractBaseEvent):
     @property
     def codes(self) -> Set[EventCodes]:
-        return { }
+        return set()
 
     def action(self, bases: List[int]) -> List[int]:
         return bases
